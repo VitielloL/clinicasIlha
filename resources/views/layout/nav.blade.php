@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vit Vendas</title>
+    <title>clinicasIlha</title>
     @vite([
             'resources/css/app.css',
             'resources/js/app.js',
@@ -23,6 +23,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="icon" type="image/png" href="{{ asset('storage/carrinho.png') }}" sizes="16x16" />
+
 </head>
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -72,7 +73,7 @@
     <!-- Brand Logo -->
     <a href="" class="brand-link">
         <img src={{asset("storage/logo.jpg")}} alt="JobFree" class="brand-image img-circle elevation-3" style="opacity:1.8">
-        <span class="brand-text font-weight-light"><i>Vit Vendas</i></span>
+        <span class="brand-text font-weight-light"><i>clinicasIlha</i></span>
     </a>
 
     <div class="sidebar">
@@ -89,50 +90,62 @@
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open">
+                <!-- <li class="nav-item menu-open">
                     <ul class="nav nav-treeview">
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a href='{{route('home')}}' class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>Home</p>
                             </a>
-                        </li> --}}
+                        </li> 
+                        <li class="nav-item">
+                            <a href='' class="nav-link">
+                                <i class="nav-icon fas fa-user-alt"></i>
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
+
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link active" style="background-color: #FFC476">
+                    <i class="nav-icon fas fa-list-alt"></i>
+                    <p>
+                        Clinica
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- <li class="nav-item">
+                            <a href='' class="nav-link">
+                                <i class="nav-icon fa fa-shopping-cart"></i>
+                                <p>Vendas</p>
+                            </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href='{{route('home')}}' class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>Home</p>
+                            </a>
+                        </li> 
                         <!-- <li class="nav-item">
                             <a href='' class="nav-link">
                                 <i class="nav-icon fas fa-user-alt"></i>
                                 <p>Perfil</p>
                             </a>
                         </li> -->
-                    </ul>
-                </li>
-
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active" style="background-color: #FFC476">
-                    <i class="nav-icon fas fa-list-alt"></i>
-                    <p>
-                        Vendas
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href='{{route('venda')}}' class="nav-link">
-                                <i class="nav-icon fa fa-shopping-cart"></i>
-                                <p>Vendas</p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href='{{route('cliente')}}' class="nav-link">
                                 <i class="nav-icon fas fa-user-plus"></i>
                                 <p>Clientes</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href='{{route('produto')}}' class="nav-link">
+                        <!-- <li class="nav-item">
+                            <a href='' class="nav-link">
                                 <i class="nav-icon fas fa-desktop"></i>
                                 <p>Produtos</p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
