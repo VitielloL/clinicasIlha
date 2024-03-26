@@ -22,7 +22,7 @@
                         </div>
                     @endif
 
-                    <h2 class="text-center "> <br/> Vit Vendas </h2>
+                    <h2 class="text-center "> <br/> Clinicas Ilha </h2>
 
                     <form method="POST" action="{{route('store.user')}}">
                         @csrf
