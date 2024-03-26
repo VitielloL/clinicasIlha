@@ -23,6 +23,10 @@ class Profissional extends Model
         'complemento',
     ];
 
+    public function consultas()
+    {
+        return $this->hasMany(Consulta::class, 'profissional_id');
+    }
 
     use HasFactory;
 }

@@ -12,7 +12,7 @@ class popula_profissional extends Seeder
     {
         DB::table('profissionais')->insert([
             'cpf' => '12345678901',
-            'nome' => 'João da Silva',
+            'nome' => 'Ademar Santos',
             'celular' => '11-1111-1111',
             'email' => 'opaitestatudo@gmail.com',
             'cep' => '11111111',

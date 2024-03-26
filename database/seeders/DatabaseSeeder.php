@@ -11,5 +11,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(popula_cliente::class);
         $this->call(popula_profissional::class);
+        $this->call(popula_consulta::class);
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProfissionalController;
+use App\Http\Controllers\ConsultaController;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/auth',[LoginController::class,'auth'])->name('auth.user');
@@ -36,4 +37,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profissional/editar/{id}', [ProfissionalController::class, 'edit'])->name('profissional.editar');
     Route::put('/profissional/update/{id}', [ProfissionalController::class, 'update'])->name('profissional.update');
     Route::get('/profissional/remover/{id}', [ProfissionalController::class, 'destroy'])->name('profissional.remover');
+
+    Route::get('/consulta', [ConsultaController::class, 'index'])->name('consulta');
+    Route::get('/consulta/novo', [ConsultaController::class, 'create'])->name('consulta.novo');
+    Route::post('/consulta/store', [ConsultaController::class, 'store'])->name('consulta.store');
+    Route::get('/consulta/{id}', [ConsultaController::class, 'show'])->name('consulta.show');
+    Route::get('/consulta/editar/{id}', [ConsultaController::class, 'edit'])->name('consulta.editar');
+    Route::put('/consulta/update/{id}', [ConsultaController::class, 'update'])->name('consulta.update');
+    Route::get('/consulta/remover/{id}', [ConsultaController::class, 'destroy'])->name('consulta.remover');
 });
