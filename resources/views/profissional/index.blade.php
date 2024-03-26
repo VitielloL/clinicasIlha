@@ -4,7 +4,7 @@
     <div class="container my-4">
         <div style="margin-bottom: 15px; padding-top:15px; display:flex; justify-content:space-between; align-items:center;">
             <h2>Lista de Profissionais</h2>
-            <a href='{{route('profissional.novo')}}' class='btn btn-success' style="height: 40px;">Cadastrar</a>
+            <a href='{{route('profissional.novo')}}' class='btn btn-success' style="height: 40px;"><i class="fas fa-user"></i> &nbsp Cadastrar</a>
         </div>
 
         @if (!empty($dados))
