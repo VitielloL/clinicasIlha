@@ -10,5 +10,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(popula_cliente::class);
+        $this->call(popula_profissional::class);
     }
 }
