@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProfissionalController;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/auth',[LoginController::class,'auth'])->name('auth.user');
@@ -27,4 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/cliente/editar/{id}', [ClienteController::class, 'edit'])->name('cliente.editar');
     Route::put('/cliente/update/{id}', [ClienteController::class, 'update'])->name('cliente.update');
     Route::get('/cliente/remover/{id}', [ClienteController::class, 'destroy'])->name('cliente.remover');
+
+    Route::get('/profissional', [ProfissionalController::class, 'index'])->name('profissional');
+    Route::get('/profissional/novo', [ProfissionalController::class, 'create'])->name('profissional.novo');
+    Route::post('/profissional/store', [ProfissionalController::class, 'store'])->name('profissional.store');
+    Route::get('/profissional/{id}', [ProfissionalController::class, 'show'])->name('profissional.show');
+    Route::get('/profissional/editar/{id}', [ProfissionalController::class, 'edit'])->name('profissional.editar');
+    Route::put('/profissional/update/{id}', [ProfissionalController::class, 'update'])->name('profissional.update');
+    Route::get('/profissional/remover/{id}', [ProfissionalController::class, 'destroy'])->name('profissional.remover');
 });

@@ -140,6 +140,12 @@
                                 <p>Clientes</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href='{{route('profissional')}}' class="nav-link">
+                                <i class="nav-icon fas fa-stethoscope"></i>
+                                <p>Profissionais</p>
+                            </a>
+                        </li>
                         <!-- <li class="nav-item">
                             <a href='' class="nav-link">
                                 <i class="nav-icon fas fa-desktop"></i>
