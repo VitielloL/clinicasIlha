@@ -116,12 +116,6 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <!-- <li class="nav-item">
-                            <a href='' class="nav-link">
-                                <i class="nav-icon fa fa-shopping-cart"></i>
-                                <p>Vendas</p>
-                            </a>
-                        </li> -->
                         <li class="nav-item">
                             <a href='{{route('home')}}' class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
@@ -135,6 +129,12 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
+                            <a href='{{route('consulta')}}' class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
+                                <p>Consultas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href='{{route('cliente')}}' class="nav-link">
                                 <i class="nav-icon fas fa-user-plus"></i>
                                 <p>Pacientes</p>
@@ -146,18 +146,6 @@
                                 <p>Profissionais</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href='{{route('consulta')}}' class="nav-link">
-                                <i class="nav-icon fas fa-calendar-alt"></i>
-                                <p>Consultas</p>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a href='' class="nav-link">
-                                <i class="nav-icon fas fa-desktop"></i>
-                                <p>Produtos</p>
-                            </a>
-                        </li> -->
                     </ul>
                 </li>
             </ul>
