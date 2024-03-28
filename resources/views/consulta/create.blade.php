@@ -76,9 +76,13 @@
                         <option value="domingo">Domingo</option>
                     </select>
                 </div>
-                <div class="col-md-2">
+                <!-- <div class="col-md-2">
                     <label class="form-label" for="data_consulta">Data da Consulta</label>
                     <input type="text" class="form-control" id="data_consulta" name="data_consulta">
+                </div> -->
+                <div class="col-md-2">
+                    <label class="form-label" for="data_consulta">Data da Consulta</label>
+                    <input type="date" class="form-control" id="data_consulta" name="data_consulta">
                 </div>
             </div>
 

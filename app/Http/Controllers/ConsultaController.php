@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Consulta;
 use App\Models\Cliente;
@@ -13,7 +14,13 @@ class ConsultaController extends Controller
     public function index()
     {
         $dados = Consulta::all();
-        return view('consulta.index')->with('dados', $dados);
+
+        foreach ($dados as $dado) {
+            // Convertendo a data para o formato brasileiro
+            $dado->data_consulta = Carbon::parse($dado->data_consulta)->format('d/m/Y');
+        }
+
+        return view('consulta', compact('dados'));
     }
 
     public function show($id)

@@ -22,7 +22,7 @@ class popula_consulta extends Seeder
             'plano' => 'UNIMED',
             'nivel' => 'Gold',
             'dia_semana' => 'Segunda-Feira',
-            'data_consulta' => '25/03/2024',
+            'data_consulta' => '2024-03-25',
         ]);
     }
 }
