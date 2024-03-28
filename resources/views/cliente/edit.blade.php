@@ -2,7 +2,7 @@
 
 @section('conteudo')
     <div class="container my-4">
-        <h2 style="margin-bottom: 15px; padding-top:15px;"> Editar Cliente </h2>
+        <h2 style="margin-bottom: 15px; padding-top:15px;"> Editar Paciente </h2>
 
         <form  action="<?= url('/cliente/update',['id' => $dado->id]);?>" method="post">
             @csrf
@@ -55,7 +55,7 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label class="form-label" for="cep">Logradouro: </label>
+                    <label class="form-label" for="logradouro">Logradouro: </label>
                     <input type="text" class="form-control" id="logradouro" name="logradouro" value="{{$dado->logradouro}}">
                 </div>
                 <div class="col-md-1">

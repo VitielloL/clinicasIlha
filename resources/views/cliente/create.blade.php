@@ -2,7 +2,7 @@
 
 @section('conteudo')
     <div class="container my-4">
-        <h2 style="margin-bottom: 15px; padding-top:15px;"> Novo Cliente </h2>
+        <h2 style="margin-bottom: 15px; padding-top:15px;"> Novo Paciente </h2>
 
         <form action='{{route('cliente.store')}}' method="POST">
             @csrf
@@ -54,7 +54,7 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label class="form-label" for="cep">Logradouro: </label>
+                    <label class="form-label" for="logradouro">Logradouro: </label>
                     <input type="text" class="form-control" id="logradouro" name="logradouro">
                 </div>
                 <div class="col-md-1">
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="mt-4 text-end">
+            <div class="mt-4">
                 <button type ="submit "class="btn btn-success">Cadastrar</button>
                 <a href="{{route('cliente')}}" class="btn btn-secondary">Cancelar</a>
             </div>

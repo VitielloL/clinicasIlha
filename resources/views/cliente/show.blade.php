@@ -8,7 +8,7 @@
                     <h2 class="fw-bold text-uppercase" style="margin-bottom: 15px; padding-top:15px;">{{$d->nome}}</h2>
                 </div>
 
-                <p class="text-center bg-info text-white fw-bold">Dados do Cliente</p>
+                <p class="text-center bg-info text-white fw-bold">Dados do Paciente</p>
 
                 <div class="form-group row">
                     <div class="col-md-6">
