@@ -22,15 +22,15 @@
                     <label class="form-label" for="profissional">Profissional: </label>
                     <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
                         @foreach ( $dados['profissional'] as $dado )
-                          <option value="{{$dado->id}}">{{$dado->nome}}</option>
+                          <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-md-5">
-                    <label class="form-label" for="cliente">Cliente: </label>
+                    <label class="form-label" for="cliente">Paciente: </label>
                     <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
                         @foreach ( $dados['cliente'] as $dado )
-                          <option value="{{$dado->id}}">{{$dado->nome}}</option>
+                          <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -66,9 +66,17 @@
                 </div>
                 <div class="col-md-2">
                     <label class="form-label" for="dia_semana">Dia da Semana: </label>
-                    <input type="text" class="form-control" id="dia_semana" name="dia_semana">
+                    <select class="form-control" id="dia_semana" name="dia_semana">
+                        <option value="segunda">Segunda-feira</option>
+                        <option value="terca">Terça-feira</option>
+                        <option value="quarta">Quarta-feira</option>
+                        <option value="quinta">Quinta-feira</option>
+                        <option value="sexta">Sexta-feira</option>
+                        <option value="sabado">Sábado</option>
+                        <option value="domingo">Domingo</option>
+                    </select>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-2">
                     <label class="form-label" for="data_consulta">Data da Consulta</label>
                     <input type="text" class="form-control" id="data_consulta" name="data_consulta">
                 </div>
@@ -76,7 +84,7 @@
 
             <div class="mt-4">
                 <button type ="submit "class="btn btn-success">Cadastrar</button>
-                <a href="{{route('cliente')}}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{route('consulta')}}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

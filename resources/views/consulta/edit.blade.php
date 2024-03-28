@@ -23,15 +23,19 @@
                     <label class="form-label" for="profissional">Profissional: </label>
                     <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
                         @foreach ($dados['profissional'] as $profissional)
-                            <option value="{{ $profissional->id }}" {{ $consulta->profissional_id == $profissional->id ? 'selected' : '' }}>{{ $profissional->nome }}</option>
+                            <option value="{{ $profissional->id }}" {{ $consulta->profissional_id == $profissional->id ? 'selected' : '' }}>
+                                {{ $profissional->nome }} - {{ $profissional->cpf }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-md-5">
-                    <label class="form-label" for="cliente">Cliente: </label>
+                    <label class="form-label" for="cliente">Paciente: </label>
                     <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
                         @foreach ($dados['cliente'] as $cliente)
-                            <option value="{{ $cliente->id }}" {{ $consulta->cliente_id == $cliente->id ? 'selected' : '' }}>{{ $cliente->nome }}</option>
+                            <option value="{{ $cliente->id }}" {{ $consulta->cliente_id == $cliente->id ? 'selected' : '' }}>
+                                {{ $cliente->nome }} - {{ $cliente->cpf }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -67,9 +71,17 @@
                 </div>
                 <div class="col-md-2">
                     <label class="form-label" for="dia_semana">Dia da Semana: </label>
-                    <input type="text" class="form-control" id="dia_semana" name="dia_semana" value="{{$consulta->dia_semana}}">
+                    <select class="form-control" id="dia_semana" name="dia_semana">
+                        <option value="Segunda-feira" {{$consulta->dia_semana == 'Segunda-feira' ? 'selected' : ''}}>Segunda-feira</option>
+                        <option value="Terça-feira" {{$consulta->dia_semana == 'Terça-feira' ? 'selected' : ''}}>Terça-feira</option>
+                        <option value="Quarta-feira" {{$consulta->dia_semana == 'Quarta-feira' ? 'selected' : ''}}>Quarta-feira</option>
+                        <option value="Quinta-feira" {{$consulta->dia_semana == 'Quinta-feira' ? 'selected' : ''}}>Quinta-feira</option>
+                        <option value="Sexta-feira" {{$consulta->dia_semana == 'Sexta-feira' ? 'selected' : ''}}>Sexta-feira</option>
+                        <option value="Sábado" {{$consulta->dia_semana == 'Sábado' ? 'selected' : ''}}>Sábado</option>
+                        <option value="Domingo" {{$consulta->dia_semana == 'Domingo' ? 'selected' : ''}}>Domingo</option>
+                    </select>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-2">
                     <label class="form-label" for="data_consulta">Data da Consulta</label>
                     <input type="text" class="form-control" id="data_consulta" name="data_consulta" value="{{$consulta->data_consulta}}">
                 </div>
@@ -77,7 +89,7 @@
 
             <div class="mt-4 text-left">
                 <button type="submit" class="btn btn-success text-white">Salvar</button>
-                <a href="{{route('cliente')}}" class="btn btn-secondary">Voltar</a>
+                <a href="{{route('consulta')}}" class="btn btn-secondary">Voltar</a>
             </div>
         </form>
     </div>

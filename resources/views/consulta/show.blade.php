@@ -61,7 +61,7 @@
                         <label class="form-label" for="dia_semana">Dia da Semana: </label>
                         <input type="text" class="form-control" id="dia_semana" value="{{$d->dia_semana}}" disabled>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                         <label class="form-label" for="data_consulta">Data da Consulta: </label>
                         <input type="text" class="form-control" id="data_consulta" value="{{$d->data_consulta}}" disabled>
                     </div>
