@@ -12,7 +12,7 @@
                 <thead class="table-info">
                     <tr>
                         <td>Sala</td>
-                        <td>Horario</td>
+                        <td>Horário</td>
                         <td>Profissional</td>
                         <td>Paciente</td>
                         <td>Dia da Semana</td>

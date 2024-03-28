@@ -12,57 +12,57 @@
 
                 <div class="form-group row">                    
                     <div class="col-md-1">
-                        <label class="form-label" for="cidade">Sala: </label>
+                        <label class="form-label" for="sala">Sala: </label>
                         <input type="text" class="form-control" id="sala" value="{{$d->sala}}" disabled>
                     </div>
                     <div class="col-md-1">
-                        <label class="form-label" for="cidade">Horario: </label>
+                        <label class="form-label" for="horario">Horário: </label>
                         <input type="text" class="form-control" id="horario" value="{{$d->horario}}" disabled>
                     </div>
                     <div class="col-md-5">
-                        <label class="form-label" for="cidade">Profissional: </label>
+                        <label class="form-label" for="profissional">Profissional: </label>
                         <input type="text" class="form-control" id="profissional" value="{{$d->profissional->nome}}" disabled>
                     </div>
                     <div class="col-md-5">
-                        <label class="form-label" for="cidade">Cliente: </label>
+                        <label class="form-label" for="cliente">Cliente: </label>
                         <input type="text" class="form-control" id="cliente" value="{{$d->cliente->nome}}" disabled>
                     </div>
                 </div>
 
                 <div class="form-group row mt-4">                    
                     <div class="col-md-3">
-                        <label class="form-label" for="cidade">CID: </label>
+                        <label class="form-label" for="cid">CID: </label>
                         <input type="text" class="form-control" id="cid" value="{{$d->cid}}" disabled>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label" for="cidade">Profissional Frequência: </label>
+                        <label class="form-label" for="prof_frequencia">Profissional Frequência: </label>
                         <input type="text" class="form-control" id="prof_frequencia" value="{{$d->prof_frequencia}}" disabled>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label" for="cidade">Paciente Frequência: </label>
+                        <label class="form-label" for="paciente_frequencia">Paciente Frequência: </label>
                         <input type="text" class="form-control" id="paciente_frequencia" value="{{$d->paciente_frequencia}}" disabled>
                     </div>
                     <div class="col-md-5">
-                        <label class="form-label" for="cidade">Especialidade:</label>
+                        <label class="form-label" for="especialidade">Especialidade:</label>
                         <input type="text" class="form-control" id="especialidade" value="{{$d->especialidade}}" disabled>
                     </div>
                 </div>
 
                 <div class="form-group row mt-4">                    
                     <div class="col-md-3">
-                        <label class="form-label" for="cidade">Plano:</label>
+                        <label class="form-label" for="plano">Plano:</label>
                         <input type="text" class="form-control" id="plano" value="{{$d->plano}}" disabled>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label" for="cidade">Nivel:</label>
+                        <label class="form-label" for="nivel">Nivel:</label>
                         <input type="text" class="form-control" id="nivel" value="{{$d->nivel}}" disabled>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label" for="cidade">Dia da Semana: </label>
+                        <label class="form-label" for="dia_semana">Dia da Semana: </label>
                         <input type="text" class="form-control" id="dia_semana" value="{{$d->dia_semana}}" disabled>
                     </div>
                     <div class="col-md-5">
-                        <label class="form-label" for="cidade">Data da Consulta: </label>
+                        <label class="form-label" for="data_consulta">Data da Consulta: </label>
                         <input type="text" class="form-control" id="data_consulta" value="{{$d->data_consulta}}" disabled>
                     </div>
                 </div>
