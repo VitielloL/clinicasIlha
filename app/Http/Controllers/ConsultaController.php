@@ -20,7 +20,7 @@ class ConsultaController extends Controller
             $dado->data_consulta = Carbon::parse($dado->data_consulta)->format('d/m/Y');
         }
 
-        return view('consulta', compact('dados'));
+        return view('consulta.index', compact('dados'));
     }
 
     public function show($id)
