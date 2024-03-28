@@ -54,7 +54,7 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label class="form-label" for="cep">Logradouro: </label>
+                    <label class="form-label" for="logradouro">Logradouro: </label>
                     <input type="text" class="form-control" id="logradouro" name="logradouro">
                 </div>
                 <div class="col-md-1">
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="mt-4 text-end">
+            <div class="mt-4">
                 <button type ="submit "class="btn btn-success">Cadastrar</button>
                 <a href="{{route('profissional')}}" class="btn btn-secondary">Cancelar</a>
             </div>

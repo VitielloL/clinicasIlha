@@ -55,7 +55,7 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label class="form-label" for="cep">Logradouro: </label>
+                    <label class="form-label" for="logradouro">Logradouro: </label>
                     <input type="text" class="form-control" id="logradouro" name="logradouro" value="{{$dado->logradouro}}">
                 </div>
                 <div class="col-md-1">
