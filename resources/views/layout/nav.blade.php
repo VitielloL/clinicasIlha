@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>clinicasIlha</title>
+    <title>Remar Mente & Corpo </title>
     @vite([
             'resources/css/app.css',
             'resources/js/app.js',
@@ -22,14 +22,14 @@
     ])
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="icon" type="image/png" href="{{ asset('storage/logo.jpg') }}" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{ asset('storage/favicon-152.png') }}" sizes="16x16" />
 
 </head>
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble animation__slow img-circle elevation-3" src={{asset("storage/logo.jpg")}} alt="JobFree" height="150" width="150">
+        <img class="animation__wobble animation__slow img-circle elevation-3" src={{asset("storage/favicon-152.png")}} alt="Remar Mente & Corpo" height="150" width="150">
     </div>
 
     <!-- Navbar -->
@@ -72,8 +72,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-        <img src={{asset("storage/logo.jpg")}} alt="JobFree" class="brand-image img-circle elevation-3" style="opacity:1.8">
-        <span class="brand-text font-weight-light"><i>clinicasIlha</i></span>
+        <img src={{asset("storage/favicon-152.png")}} alt="Remar Mente & Corpo" class="brand-image img-circle elevation-3" style="opacity:1.8">
+        <span class="brand-text font-weight-light"><i>Remar Mente & Corpo</i></span>
     </a>
 
     <div class="sidebar">
