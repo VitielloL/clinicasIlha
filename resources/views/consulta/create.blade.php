@@ -21,6 +21,7 @@
                 <div class="col-md-5">
                     <label class="form-label" for="profissional">Profissional: </label>
                     <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
+                        <option value="" selected disabled>Selecione um profissional</option>
                         @foreach ( $dados['profissional'] as $dado )
                           <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
                         @endforeach
@@ -29,6 +30,7 @@
                 <div class="col-md-5">
                     <label class="form-label" for="cliente">Paciente: </label>
                     <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
+                        <option value="" selected disabled>Selecione um paciente</option>
                         @foreach ( $dados['cliente'] as $dado )
                           <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
                         @endforeach
@@ -64,9 +66,10 @@
                     <label class="form-label" for="nivel">Nivel: </label>
                     <input type="text" class="form-control" id="nivel" name="nivel">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label class="form-label" for="dia_semana">Dia da Semana: </label>
                     <select class="form-control" id="dia_semana" name="dia_semana">
+                        <option value="" selected disabled>Selecione um dia da semana</option>
                         <option value="Segunda-feira">Segunda-feira</option>
                         <option value="Terça-feira">Terça-feira</option>
                         <option value="Quarta-feira">Quarta-feira</option>
@@ -76,10 +79,7 @@
                         <option value="Domingo">Domingo</option>
                     </select>
                 </div>
-                <!-- <div class="col-md-2">
-                    <label class="form-label" for="data_consulta">Data da Consulta</label>
-                    <input type="text" class="form-control" id="data_consulta" name="data_consulta">
-                </div> -->
+
                 <div class="col-md-2">
                     <label class="form-label" for="data_consulta">Data da Consulta</label>
                     <input type="date" class="form-control" id="data_consulta" name="data_consulta">
