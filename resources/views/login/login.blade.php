@@ -21,7 +21,7 @@
                     </div>
                 @endif
 
-                <h2 class="text-center ">  <i>Remar Mente & Corpo <br> Clinica Multidisciplinar </i></h2>
+                <h2 class="text-center ">  <i>Remar Mente & Corpo <br> Clínica Multidisciplinar </i></h2>
 
                 <form action="{{route('auth.user')}}" method="POST">
                     @csrf
