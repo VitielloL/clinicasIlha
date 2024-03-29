@@ -11,15 +11,19 @@
                 <p class="text-center bg-info text-white fw-bold">Dados do Profissional</p>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label class="form-label" for="email">Email: </label>
                         <input type="text" class="form-control" id="email" value="{{$d->email}}" disabled>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        <label class="form-label" for="especialidade">Especialidade: </label>
+                        <input type="text" class="form-control" id="especialidade" name="especialidade" value="{{$d->especializacao}}" disabled>
+                    </div>
+                    <div class="col-md-2">
                         <label class="form-label" for="cpf">CPF: </label>
                         <input type="text" class="form-control" id="cpf" value="{{$d->cpf}}" disabled>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label class="form-label" for="celular">Celular: </label>
                         <input type="text" class="form-control" id="celular" value="{{$d->celular}}" disabled>
                     </div>

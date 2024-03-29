@@ -53,6 +53,7 @@ class ProfissionalController extends Controller
 
         $dado->cpf = $request->cpf;
         $dado->nome = $request->nome;
+        $dado->especializacao = $request->especializacao;
         $dado->email = $request->email;
         $dado->celular = $request->celular;
         $dado->cep = $request->cep;

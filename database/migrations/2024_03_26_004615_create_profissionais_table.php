@@ -12,6 +12,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('cpf')->unique();
             $table->string('nome');
+            $table->string('especializacao');
             $table->string('email');
             $table->string('celular')->nullable();
             $table->string('cep')->nullable();

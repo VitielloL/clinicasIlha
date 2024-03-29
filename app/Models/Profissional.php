@@ -12,6 +12,7 @@ class Profissional extends Model
     protected $fillable = [
         'nome',
         'cpf',
+        'especializacao',
         'email',
         'celular',
         'cep',

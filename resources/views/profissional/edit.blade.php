@@ -30,6 +30,10 @@
                     <label class="form-label" for="cpf">CPF: </label>
                     <input type="text" class="form-control FLDSTRREQ_cpf" id="cpf" name="cpf" minlength="11" maxlength="16" value="{{$dado->cpf}}">
                 </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="especializacao">Especialidade: </label>
+                    <input type="text" class="form-control" id="especializacao" name="especializacao" value="{{$dado->especializacao}}">
+                </div>
             </div>
 
             <p class="text-center bg-info text-white fw-bold">Dados Residênciais</p>

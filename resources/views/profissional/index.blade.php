@@ -14,6 +14,7 @@
                         <td>Nome</td>
                         <td>CPF</td>
                         <td>Email</td>
+                        <td>Especialização</td>
                         <td>Ações</td>
                     </tr>
                 </thead>
@@ -30,6 +31,7 @@
                             <td style="vertical-align:middle">{{$dado->nome}}</td>
                             <td style="vertical-align:middle">{{$dado->cpf}}</td>
                             <td style="vertical-align:middle">{{$dado->email}}</td>
+                            <td style="vertical-align:middle">{{$dado->especializacao}}</td>
                             <td>
                                 <div class="d-flex">
                                     <a href={{$linkReadMore}} class="btn btn-info mr-2"><i class="fa fa-eye mr-1 mb-0" aria-hidden="true"></i> Ver Mais</a>
