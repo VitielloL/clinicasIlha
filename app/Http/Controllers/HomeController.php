@@ -11,7 +11,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $dados = Consulta::all();
+        // Definindo o fuso horário para São Paulo (Brasília)
+        date_default_timezone_set('America/Sao_Paulo');
+
+        // Obtém a data atual no fuso horário do servidor
+        $dataAtual = Carbon::now()->format('Y-m-d');
+
+        // Consulta apenas as consultas do dia de hoje
+        $dados = Consulta::whereDate('data_consulta', $dataAtual)->get();
 
         foreach ($dados as $dado) {
             // Convertendo a data para o formato brasileiro
