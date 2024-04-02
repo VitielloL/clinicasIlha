@@ -12,12 +12,12 @@ class popula_profissional extends Seeder
     {
         DB::table('profissionais')->insert([
             [
-                'cpf' => '12345678901',
+                'cpf' => '123.456.789-01',
                 'nome' => 'Ademar Santos',
                 'especializacao' => 'Fonoaudiólogo',
                 'celular' => '11-1111-1111',
                 'email' => 'ademar@example.com',
-                'cep' => '11111111',
+                'cep' => '11111-111',
                 'bairro' => 'Centro',
                 'logradouro' => 'Rua Teste',
                 'numero' => '1',
@@ -26,12 +26,12 @@ class popula_profissional extends Seeder
                 'uf' => 'SP',
             ],
             [
-                'cpf' => '23456789012',
+                'cpf' => '234.567.890-12',
                 'nome' => 'Maria Oliveira',
                 'especializacao' => 'Nutricionista',
                 'celular' => '22-2222-2222',
                 'email' => 'maria@example.com',
-                'cep' => '22222222',
+                'cep' => '22222-222',
                 'bairro' => 'Bairro Novo',
                 'logradouro' => 'Avenida Principal',
                 'numero' => '10',
@@ -40,12 +40,12 @@ class popula_profissional extends Seeder
                 'uf' => 'RJ',
             ],
             [
-                'cpf' => '34567890123',
+                'cpf' => '345.678.901-23',
                 'nome' => 'Carlos Santos',
                 'especializacao' => 'Psicólogo',
                 'celular' => '33-3333-3333',
                 'email' => 'carlos@example.com',
-                'cep' => '33333333',
+                'cep' => '33333-333',
                 'bairro' => 'Bela Vista',
                 'logradouro' => 'Rua das Flores',
                 'numero' => '5',
@@ -54,12 +54,12 @@ class popula_profissional extends Seeder
                 'uf' => 'MG',
             ],
             [
-                'cpf' => '45678901234',
+                'cpf' => '456.789.012-34',
                 'nome' => 'Ana Pereira',
                 'especializacao' => 'Psicólogo',
                 'celular' => '44-4444-4444',
                 'email' => 'ana@example.com',
-                'cep' => '44444444',
+                'cep' => '44444-444',
                 'bairro' => 'Jardim São Paulo',
                 'logradouro' => 'Rua das Árvores',
                 'numero' => '20',
@@ -68,5 +68,5 @@ class popula_profissional extends Seeder
                 'uf' => 'PR',
             ]
         ]);
-    }
+    }    
 }
