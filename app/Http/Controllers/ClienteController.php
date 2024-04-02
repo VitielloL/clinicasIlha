@@ -31,9 +31,21 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
+        // Validação dos campos
+        $request->validate([
+            'cpf' => 'required|unique:clientes,cpf',
+            // Adicione outras regras de validação conforme necessário para os outros campos
+        ], [
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'CPF já cadastrado',
+            // Adicione mensagens de erro para as outras regras de validação conforme necessário
+        ]);
+    
+        // Se a validação passar, prosseguir com o armazenamento dos dados
         $dados = $request->all();
-
         Cliente::create($dados);
+    
+        // Redirecionar de volta à página de clientes após o cadastro
         return redirect()->route('cliente');
     }
 
@@ -71,7 +83,7 @@ class ClienteController extends Controller
     {
         $dado = Cliente::where('id', $id)->get();
         if (!empty($dado)) {
-            DB::delete('DELETE FROM cliente WHERE id = ?', [$id]);
+            DB::delete('DELETE FROM clientes WHERE id = ?', [$id]);
         }
         return redirect()->route('cliente');
     }   
