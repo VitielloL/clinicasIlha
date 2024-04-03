@@ -13,14 +13,14 @@
             <form action="{{ route('consulta.buscar') }}" method="GET" class="mb-4">
                 <div class="row mt-3">
                     <div class="col-md-3">
-                        <input type="text" name="nome_profissional" class="form-control" placeholder="Nome do Profissional">
+                        <input type="text" name="nome_profissional" class="form-control" placeholder="Nome do profissional">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="nome_cliente" class="form-control" placeholder="Nome do Paciente">
+                        <input type="text" name="nome_cliente" class="form-control" placeholder="Nome do paciente">
                     </div>
                     <div class="col-md-2">
                         <select name="dia_semana" class="form-control">
-                            <option value="">Selecione o Dia da Semana</option>
+                            <option value="">Selecione o dia da semana</option>
                             <option value="Segunda-Feira">Segunda-Feira</option>
                             <option value="Terça-Feira">Terça-Feira</option>
                             <option value="Quarta-Feira">Quarta-Feira</option>

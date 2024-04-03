@@ -5,8 +5,6 @@ OK - add verificação de cpf para que nao de problema no cpf unique create clie
 OK - add verificação de cpf para que nao de problema no cpf unique edit cliente
 OK - add verificação de cpf para que nao de problema no cpf unique create prof
 OK - add verificação de cpf para que nao de problema no cpf unique edit prof
-- colocar filtro no select - paciente tela de agendamento
-- colocar filtro no select - funcionario tela de agendamento
 OK - colocar filtros tela index agendamento
 OK - paginação tela index agendamento
 OK - colocar filtros tela index cliente
@@ -21,6 +19,11 @@ OK - add campos de frequencia no create consulta
 OK - add campos de frequencia no show more
 OK - add campos de frequencia no banco seed+migration
 OK - colocar presente , faltou, faltou justificativa - no index do agendamento
+- colocar filtro no select - paciente tela de agendamento
+- colocar filtro no select - funcionario tela de agendamento
+OK - adicionar filtros tela de home
+OK - adicionar paginacao tela de home
+
 
 ** PRÉ REQUISITOS PARA HOST **
 PHP - 8.1.7

@@ -15,6 +15,8 @@ Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home/buscar', [HomeController::class, 'buscar'])->name('home.buscar');
+    Route::put('/home/atualizar-frequencia/{consulta}', [HomeController::class, 'atualizarFrequencia'])->name('home.atualizar-frequencia');
     Route::get('/home/novo', [HomeController::class, 'create'])->name('home.novo');
     Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
     Route::get('/home/{id}', [HomeController::class, 'show'])->name('home.show');
