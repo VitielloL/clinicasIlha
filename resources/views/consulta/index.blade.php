@@ -76,4 +76,4 @@
 </div>
 @endsection
 
-@vite(['resources/js/registraFaltas.js'])
+<!-- @vite(['resources/js/registraFaltas.js']) -->
