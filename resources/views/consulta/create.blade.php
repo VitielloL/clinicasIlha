@@ -87,7 +87,7 @@
             </div>
 
             <div class="mt-4">
-                <button type ="submit "class="btn btn-success">Cadastrar</button>
+                <button type ="submit "class="btn btn-success">Agendar</button>
                 <a href="{{route('consulta')}}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
