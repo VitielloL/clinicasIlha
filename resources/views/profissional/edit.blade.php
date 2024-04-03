@@ -1,7 +1,7 @@
 @extends('layout.nav')
 
 @section('conteudo')
-    <div class="container my-4">
+    <div class="container-fluid my-4">
         <h2 style="margin-bottom: 15px; padding-top:15px;"> Editar Profissional </h2>
 
         @if ($errors->any())

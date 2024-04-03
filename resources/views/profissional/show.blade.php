@@ -1,7 +1,7 @@
 @extends('layout.nav')
 
 @section('conteudo')
-    <div class="container my-4">
+    <div class="container-fluid my-4">
         @if (!empty($dado))
             @foreach ( $dado as $d )
                 <div class="d-flex">

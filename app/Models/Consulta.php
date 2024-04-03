@@ -17,6 +17,7 @@ class Consulta extends Model
         'horario',
         'prof_frequencia',
         'paciente_frequencia',
+        'falta_justificada',
         'especialidade',
         'plano',
         'nivel',
