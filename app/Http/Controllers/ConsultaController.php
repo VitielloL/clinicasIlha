@@ -37,7 +37,7 @@ class ConsultaController extends Controller
         }
     }
 
-        public function create()
+    public function create()
     {   
         $dados['cliente'] = Cliente::all();
         $dados['profissional'] = Profissional::all();
@@ -96,49 +96,7 @@ class ConsultaController extends Controller
             return redirect()->route('consulta')->with('error', 'Consulta não encontrada.');
         }
     }
-    
-    // public function update(Request $request, $id)
-    // {
-    //     $request->validate([
-    //         'sala' => 'required',
-    //         'horario' => 'required',
-    //         'profissional' => 'required',
-    //         'cliente' => 'required',
-    //         'cid' => 'nullable',
-    //         'prof_frequencia' => 'nullable',
-    //         'paciente_frequencia' => 'nullable',
-    //         'falta_justificada' => 'nullable',
-    //         'especialidade' => 'nullable',
-    //         'plano' => 'nullable',
-    //         'nivel' => 'nullable',
-    //         'dia_semana' => 'nullable',
-    //         'data_consulta' => 'nullable',
-    //     ]);
-    
-    //     $consulta = Consulta::find($id);
-    
-    //     if ($consulta) {
-    //         $consulta->sala = $request->sala;
-    //         $consulta->horario = $request->horario;
-    //         $consulta->profissional_id = $request->profissional;
-    //         $consulta->cliente_id = $request->cliente;
-    //         $consulta->cid = $request->cid;
-    //         $consulta->prof_frequencia = $request->prof_frequencia;
-    //         $consulta->paciente_frequencia = $request->paciente_frequencia;
-    //         $consulta->falta_justificada = $request->falta_justificada;
-    //         $consulta->especialidade = $request->especialidade;
-    //         $consulta->plano = $request->plano;
-    //         $consulta->nivel = $request->nivel;
-    //         $consulta->dia_semana = $request->dia_semana;
-    //         $consulta->data_consulta = $request->data_consulta;
-    
-    //         $consulta->save();
-    //         return redirect()->route('consulta')->with('success', 'Consulta atualizada com sucesso!');
-    //     } else {
-    //         return redirect()->route('consulta')->with('error', 'Consulta não encontrada.');
-    //     }
-    // }
-    
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -179,7 +137,6 @@ class ConsultaController extends Controller
         }
     }
 
-    
     public function destroy($id)
     {
         $dado = Consulta::where('id', $id)->get();
