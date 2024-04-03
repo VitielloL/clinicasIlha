@@ -13,16 +13,65 @@ class ConsultaController extends Controller
 {
     public function index()
     {
-        $dados = Consulta::all();
-
+        // Recuperar todos os clientes ordenados pelo nome
+        $dados = Consulta::orderBy('data_consulta')->paginate(10);
+        
         foreach ($dados as $dado) {
             // Convertendo a data para o formato brasileiro
             $dado->data_consulta = Carbon::parse($dado->data_consulta)->format('d/m/Y');
         }
 
-        return view('consulta.index', compact('dados'));
+        // Retornar a view com os dados
+        return view('consulta.index')->with('dados', $dados);
     }
 
+    public function buscar(Request $request)
+    {
+        // Verificar se houve algum parâmetro de busca enviado
+        if ($request->filled('nome_profissional') || $request->filled('nome_cliente') || $request->filled('dia_semana') || $request->filled('data_consulta')) {
+            $nomeProfissional = $request->input('nome_profissional');
+            $nomeCliente = $request->input('nome_cliente');
+            $diaSemana = $request->input('dia_semana');
+            $dataConsulta = $request->input('data_consulta');
+    
+            // Aplicar a lógica de filtro conforme necessário
+            $query = Consulta::query();
+    
+            if ($nomeProfissional) {
+                $query->whereHas('profissional', function ($q) use ($nomeProfissional) {
+                    $q->where('nome', 'like', '%' . $nomeProfissional . '%');
+                });
+            }
+    
+            if ($nomeCliente) {
+                $query->whereHas('cliente', function ($q) use ($nomeCliente) {
+                    $q->where('nome', 'like', '%' . $nomeCliente . '%');
+                });
+            }
+    
+            if ($diaSemana) {
+                $query->where('dia_semana', $diaSemana);
+            }
+    
+            if ($dataConsulta) {
+                $query->where('data_consulta', $dataConsulta);
+            }
+    
+            $dados = $query->paginate(10); // Paginar os dados
+    
+            // Formatando a data para exibição na view
+            foreach ($dados as $consulta) {
+                $consulta->data_consulta = Carbon::parse($consulta->data_consulta)->format('d/m/Y');
+            }
+        } else {
+            // Se nenhum parâmetro de busca foi fornecido, recuperar todos os dados paginados
+            $dados = Consulta::paginate(10); // Paginar os dados
+        }
+    
+        // Retornar a view com os dados
+        return view('consulta.index')->with('dados', $dados);
+    }
+    
     public function atualizarFrequencia(Request $request, Consulta $consulta)
     {
         $consulta->update(['frequencia' => $request->input('frequencia')]);

@@ -9,6 +9,37 @@
                 <a href='{{route('consulta.novo')}}' class='btn btn-success' style="height: 40px;"><i class="far fa-calendar-check"></i> &nbsp Agendar</a>
             </div>
 
+            <!-- Formulário de busca -->
+            <form action="{{ route('consulta.buscar') }}" method="GET" class="mb-4">
+                <div class="row mt-3">
+                    <div class="col-md-3">
+                        <input type="text" name="nome_profissional" class="form-control" placeholder="Nome do Profissional">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="nome_cliente" class="form-control" placeholder="Nome do Paciente">
+                    </div>
+                    <div class="col-md-2">
+                        <select name="dia_semana" class="form-control">
+                            <option value="">Selecione o Dia da Semana</option>
+                            <option value="Segunda-Feira">Segunda-Feira</option>
+                            <option value="Terça-Feira">Terça-Feira</option>
+                            <option value="Quarta-Feira">Quarta-Feira</option>
+                            <option value="Quinta-Feira">Quinta-Feira</option>
+                            <option value="Sexta-Feira">Sexta-Feira</option>
+                            <option value="Sábado">Sábado</option>
+                            <option value="Domingo">Domingo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="date" name="data_consulta" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <a href="{{ route('consulta') }}" class="btn btn-secondary">Limpar Filtros</a>
+                    </div>
+                </div>
+            </form>
+
             @if (!empty($dados))
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-full-width">
@@ -64,6 +95,41 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Paginação -->
+            <div class="row mt-1">
+                <div class="col-md-12">
+                    <nav aria-label="Navegação de página">
+                        <ul class="pagination justify-content-center">
+                            @if ($dados->currentPage() > 1)
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $dados->previousPageUrl() }}" aria-label="Anterior">
+                                        Anterior
+                                    </a>
+                                </li>
+                            @endif
+
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">
+                                    Mostrando {{ $dados->firstItem() }} a {{ $dados->lastItem() }} de {{ $dados->total() }} resultados
+                                </a>
+                            </li>
+
+                            @if ($dados->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $dados->nextPageUrl() }}" aria-label="Próximo">
+                                        Próximo
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            @else
+            <div class="alert alert-warning" role="alert">
+                Nenhuma consulta encontrada.
             </div>
             @endif
         </div>

@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-4">
                 <button type="submit" class="btn btn-primary">Buscar</button>
-                <a href="{{ route('profissional') }}" class="btn btn-secondary">Ver Todos</a>
+                <a href="{{ route('profissional') }}" class="btn btn-secondary">Limpar Filtros</a>
             </div>
         </div>
     </form>
