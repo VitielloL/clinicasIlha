@@ -11,7 +11,34 @@ class ClienteController extends Controller
 {
     public function index()
     {
-        $dados = Cliente::all();
+        // Recuperar todos os clientes ordenados pelo nome
+        $dados = Cliente::orderBy('nome')->paginate(10);
+        
+        // Retornar a view com os dados
+        return view('cliente.index')->with('dados', $dados);
+    }
+
+    public function buscar(Request $request)
+    {
+        // Verificar se houve algum parâmetro de busca enviado
+        if ($request->filled('nome') || $request->filled('cpf')) {
+            $nome = $request->input('nome');
+            $cpf = $request->input('cpf');
+            // Aplicar a lógica de filtro conforme necessário
+            $dados = Cliente::where(function ($query) use ($nome, $cpf) {
+                if ($nome) {
+                    $query->where('nome', 'like', '%' . $nome . '%');
+                }
+                if ($cpf) {
+                    $query->orWhere('cpf', 'like', '%' . $cpf . '%');
+                }
+            })->paginate(10); // Substituir get() por paginate(10)
+        } else {
+            // Se nenhum parâmetro de busca foi fornecido, recuperar todos os dados paginados
+            $dados = Cliente::paginate(10); // Paginar os dados
+        }
+    
+        // Retornar a view com os dados
         return view('cliente.index')->with('dados', $dados);
     }
 

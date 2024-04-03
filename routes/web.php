@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/home/remover/{id}', [HomeController::class, 'destroy'])->name('home.remover');
 
     Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
+    Route::get('/cliente/buscar', [ClienteController::class, 'buscar'])->name('cliente.buscar');
     Route::get('/cliente/novo', [ClienteController::class, 'create'])->name('cliente.novo');
     Route::post('/cliente/store', [ClienteController::class, 'store'])->name('cliente.store');
     Route::get('/cliente/{id}', [ClienteController::class, 'show'])->name('cliente.show');
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cliente/remover/{id}', [ClienteController::class, 'destroy'])->name('cliente.remover');
 
     Route::get('/profissional', [ProfissionalController::class, 'index'])->name('profissional');
+    Route::get('/profissional/buscar', [ProfissionalController::class, 'buscar'])->name('profissional.buscar');
     Route::get('/profissional/novo', [ProfissionalController::class, 'create'])->name('profissional.novo');
     Route::post('/profissional/store', [ProfissionalController::class, 'store'])->name('profissional.store');
     Route::get('/profissional/{id}', [ProfissionalController::class, 'show'])->name('profissional.show');

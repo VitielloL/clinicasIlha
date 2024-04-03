@@ -70,5 +70,3 @@
     </div>
 </div>
 @endsection
-
-@vite(['resources/js/frequencia.js'])
