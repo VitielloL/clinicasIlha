@@ -28,8 +28,9 @@ class ConsultaController extends Controller
     public function buscar(Request $request)
     {
         // Verificar se houve algum parâmetro de busca enviado
-        if ($request->filled('nome_profissional') || $request->filled('nome_cliente') || $request->filled('dia_semana') || $request->filled('data_consulta')) {
+        if ($request->filled('nome_profissional') || $request->filled('nome_cliente') || $request->filled('dia_semana') || $request->filled('data_consulta') || $request->filled('frequencia')) {
             $nomeProfissional = $request->input('nome_profissional');
+            $frequencia = $request->input('frequencia');
             $nomeCliente = $request->input('nome_cliente');
             $diaSemana = $request->input('dia_semana');
             $dataConsulta = $request->input('data_consulta');
@@ -49,6 +50,10 @@ class ConsultaController extends Controller
                 });
             }
     
+            if ($frequencia) {
+                $query->where('frequencia', $frequencia);
+            }
+
             if ($diaSemana) {
                 $query->where('dia_semana', $diaSemana);
             }

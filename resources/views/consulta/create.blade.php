@@ -52,6 +52,7 @@
                     <select class="form-control" id="frequencia" name="frequencia" required>
                         <option value="" selected disabled>Selecione uma opção abaixo</option>
                         <option value="Agendado">Agendado</option>
+                        <option value="Lista de Espera">Lista de Espera</option>
                         <option value="Presente">Presente</option>
                         <option value="Falta">Falta</option>
                         <option value="Falta Justificada">Falta Justificada</option>

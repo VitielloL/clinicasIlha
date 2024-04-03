@@ -21,6 +21,16 @@
                         <input type="text" name="sala" class="form-control" placeholder="Digite a sala">
                     </div>
                     <div class="col-md-2">
+                        <select name="frequencia" class="form-control">
+                        <option value="" selected disabled>Frequência</option>
+                        <option value="Agendado">Agendado</option>
+                        <option value="Lista de Espera">Lista de Espera</option>
+                        <option value="Presente">Presente</option>
+                        <option value="Falta">Falta</option>
+                        <option value="Falta Justificada">Falta Justificada</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
                         <button type="submit" class="btn btn-primary">Buscar</button>
                         <a href="{{ route('home') }}" class="btn btn-secondary">Limpar Filtros</a>
                     </div>
@@ -62,6 +72,7 @@
                                     <div class="d-flex">
                                         <select class="form-control" name="frequencia" required>
                                             <option value="Agendado" {{ $consulta->frequencia == 'Agendado' ? 'selected' : '' }}>Agendado</option>
+                                            <option value="Lista de Espera" {{$consulta->frequencia == 'Lista de Espera' ? 'selected' : ''}}>Lista de Espera</option>
                                             <option value="Presente" {{ $consulta->frequencia == 'Presente' ? 'selected' : '' }}>Presente</option>
                                             <option value="Falta" {{ $consulta->frequencia == 'Falta' ? 'selected' : '' }}>Falta</option>
                                             <option value="Falta Justificada" {{ $consulta->frequencia == 'Falta Justificada' ? 'selected' : '' }}>Falta Justificada</option>

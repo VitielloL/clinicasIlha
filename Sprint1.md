@@ -21,9 +21,13 @@ OK - add campos de frequencia no banco seed+migration
 OK - colocar presente , faltou, faltou justificativa - no index do agendamento
 - colocar filtro no select - paciente tela de agendamento
 - colocar filtro no select - funcionario tela de agendamento
+- add lista de espera nos campos de frequencia
+OK - add filtro de frequencia consultar
+OK - add filtro de frequencia home
+- add toda vez que filtrar por frequencia colocar por data de criação do agendamento created_at tela consulta
+- add toda vez que filtrar por frequencia colocar por data de criação do agendamento created_at tela home
 OK - adicionar filtros tela de home
 OK - adicionar paginacao tela de home
-
 
 ** PRÉ REQUISITOS PARA HOST **
 PHP - 8.1.7

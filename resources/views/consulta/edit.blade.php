@@ -54,8 +54,9 @@
                     <label class="form-label" for="frequencia">Frequência: </label>
                     <select class="form-control" id="frequencia" name="frequencia">
                         <option value="Agendado" {{$consulta->frequencia == 'Agendado' ? 'selected' : ''}}>Agendado</option>
+                        <option value="Lista de Espera" {{$consulta->frequencia == 'Lista de Espera' ? 'selected' : ''}}>Lista de Espera</option>
                         <option value="Presente" {{$consulta->frequenciaa == 'Presente' ? 'selected' : ''}}>Presente</option>
-                        <option value="Falta" {{$consulta->frequencia == 'SábFaltaado' ? 'selected' : ''}}>Falta</option>
+                        <option value="Falta" {{$consulta->frequencia == 'Falta' ? 'selected' : ''}}>Falta</option>
                         <option value="Falta Justificada" {{$consulta->dia_semana == 'Falta Justificada' ? 'selected' : ''}}>Falta Justificada</option>
                     </select>
                 </div>

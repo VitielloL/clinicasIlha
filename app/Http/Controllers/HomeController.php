@@ -37,8 +37,9 @@ class HomeController extends Controller
         $dataAtual = Carbon::now()->format('Y-m-d');
     
         // Verificar se houve algum parâmetro de busca enviado
-        if ($request->filled('nome_profissional') || $request->filled('nome_cliente') || $request->filled('sala')) {
+        if ($request->filled('nome_profissional') || $request->filled('nome_cliente') || $request->filled('sala') || $request->filled('frequencia')) {
             $nomeProfissional = $request->input('nome_profissional');
+            $frequencia = $request->input('frequencia');
             $nomeCliente = $request->input('nome_cliente');
             $sala = $request->input('sala');
     
@@ -57,6 +58,10 @@ class HomeController extends Controller
                 });
             }
     
+            if ($frequencia) {
+                $query->where('frequencia', $frequencia);
+            }
+
             if ($sala) {
                 $query->where('sala', $sala);
             }
