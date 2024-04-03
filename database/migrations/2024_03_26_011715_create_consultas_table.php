@@ -15,9 +15,10 @@ return new class extends Migration
             $table->string('sala')->nullable();
             $table->string('horario')->nullable();
             $table->string('cid')->nullable();
-            $table->boolean('prof_frequencia')->nullable();
-            $table->boolean('paciente_frequencia')->nullable();
-            $table->boolean('falta_justificada')->nullable();
+            $table->string('frequencia')->nullable();
+            // $table->boolean('prof_frequencia')->nullable();
+            // $table->boolean('paciente_frequencia')->nullable();
+            // $table->boolean('falta_justificada')->nullable();
             $table->string('especialidade')->nullable();
             $table->string('plano')->nullable();
             $table->string('nivel')->nullable();

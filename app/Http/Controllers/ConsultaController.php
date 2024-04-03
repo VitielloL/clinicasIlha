@@ -23,6 +23,13 @@ class ConsultaController extends Controller
         return view('consulta.index', compact('dados'));
     }
 
+    public function atualizarFrequencia(Request $request, Consulta $consulta)
+    {
+        $consulta->update(['frequencia' => $request->input('frequencia')]);
+    
+        return redirect()->back()->with('success', 'Frequência atualizada com sucesso');
+    }
+    
     public function show($id)
     {
         $dado = Consulta::where('id', $id)->get();
@@ -54,9 +61,7 @@ class ConsultaController extends Controller
             'profissional' => 'required',
             'cliente' => 'required',
             'cid' => 'nullable',
-            'prof_frequencia' => 'nullable',
-            'paciente_frequencia' => 'nullable',
-            'falta_justificada' => 'nullable',
+            'frequencia' => 'nullable',
             'especialidade' => 'nullable',
             'plano' => 'nullable',
             'nivel' => 'nullable',
@@ -70,9 +75,7 @@ class ConsultaController extends Controller
         $consulta->profissional_id = $request->profissional;
         $consulta->cliente_id = $request->cliente;
         $consulta->cid = $request->cid;
-        $consulta->prof_frequencia = $request->prof_frequencia;
-        $consulta->paciente_frequencia = $request->paciente_frequencia;
-        $consulta->falta_justificada = $request->falta_justificada;
+        $consulta->frequencia = $request->frequencia;
         $consulta->especialidade = $request->especialidade;
         $consulta->plano = $request->plano;
         $consulta->nivel = $request->nivel;
@@ -105,6 +108,7 @@ class ConsultaController extends Controller
             'profissional' => 'required',
             'cliente' => 'required',
             'cid' => 'nullable',
+            'frequencia' => 'nullable',
             'especialidade' => 'nullable',
             'plano' => 'nullable',
             'nivel' => 'nullable',
@@ -120,10 +124,7 @@ class ConsultaController extends Controller
             $consulta->profissional_id = $request->profissional;
             $consulta->cliente_id = $request->cliente;
             $consulta->cid = $request->cid;
-            // Converter os valores dos campos checkbox para booleanos
-            $consulta->prof_frequencia = $request->has('prof_frequencia') ? 1 : 0;
-            $consulta->paciente_frequencia = $request->has('paciente_frequencia') ? 1 : 0;
-            $consulta->falta_justificada = $request->has('falta_justificada') ? 1 : 0;
+            $consulta->frequencia = $request->frequencia;
             $consulta->especialidade = $request->especialidade;
             $consulta->plano = $request->plano;
             $consulta->nivel = $request->nivel;

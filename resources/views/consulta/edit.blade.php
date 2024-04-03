@@ -19,7 +19,7 @@
                     <label class="form-label" for="horario">Horário: </label>
                     <input type="text" class="form-control" id="horario" name="horario" value="{{$consulta->horario}}">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label class="form-label" for="profissional">Profissional: </label>
                     <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
                         @foreach ($dados['profissional'] as $profissional)
@@ -29,7 +29,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label class="form-label" for="cliente">Paciente: </label>
                     <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
                         @foreach ($dados['cliente'] as $cliente)
@@ -39,42 +39,27 @@
                         @endforeach
                     </select>
                 </div>
-            </div>
-
-            <div class="form-group row mt-4">
                 <div class="col-md-2">
                     <label class="form-label" for="celular">CID: </label>
                     <input type="text" class="form-control" id="cid" name="cid" value="{{$consulta->cid}}">
                 </div>
-                <div class="col-md-3">
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-md-2">
                     <label class="form-label" for="especialidade">Especialidade</label>
                     <input type="text" class="form-control" id="especialidade" name="especialidade" value="{{$consulta->especialidade}}">
                 </div>
                 <div class="col-md-2">
-                    <label class="form-label">Profissional: </label><br>
-                    <div class="form-check form-switch ml-3">
-                        <input class="form-check-input" type="checkbox" id="prof_frequencia" name="prof_frequencia" {{$consulta->prof_frequencia ? 'checked' : ''}}>
-                        <label class="form-check-label" for="prof_frequencia">Presente</label>
-                    </div>
+                    <label class="form-label" for="frequencia">Frequência: </label>
+                    <select class="form-control" id="frequencia" name="frequencia">
+                        <option value="Agendado" {{$consulta->frequencia == 'Agendado' ? 'selected' : ''}}>Agendado</option>
+                        <option value="Presente" {{$consulta->frequenciaa == 'Presente' ? 'selected' : ''}}>Presente</option>
+                        <option value="Falta" {{$consulta->frequencia == 'SábFaltaado' ? 'selected' : ''}}>Falta</option>
+                        <option value="Falta Justificada" {{$consulta->dia_semana == 'Falta Justificada' ? 'selected' : ''}}>Falta Justificada</option>
+                    </select>
                 </div>
                 <div class="col-md-2">
-                    <label class="form-label">Paciente: </label><br>
-                    <div class="form-check form-switch ml-3">
-                        <input class="form-check-input" type="checkbox" id="paciente_frequencia" name="paciente_frequencia" {{$consulta->paciente_frequencia ? 'checked' : ''}}>
-                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label">Falta Justificada: </label><br>
-                    <div class="form-check form-switch ml-3">
-                        <input class="form-check-input" type="checkbox" id="falta_justificada" name="falta_justificada" {{$consulta->falta_justificada ? 'checked' : ''}}>
-                        <label class="form-check-label" for="falta_justificada"></label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-4">
-                <div class="col-md-3">
                     <label class="form-label" for="plano">Plano: </label>
                     <input type="text" class="form-control" id="plano" name="plano" value="{{$consulta->plano}}">
                 </div>
@@ -94,14 +79,14 @@
                         <option value="Domingo" {{$consulta->dia_semana == 'Domingo' ? 'selected' : ''}}>Domingo</option>
                     </select>
                 </div>
-                <!-- <div class="col-md-2">
-                    <label class="form-label" for="data_consulta">Data da Consulta</label>
-                    <input type="text" class="form-control" id="data_consulta" name="data_consulta" value="{{$consulta->data_consulta}}">
-                </div> -->
                 <div class="col-md-2">
                     <label class="form-label" for="data_consulta">Data da Consulta</label>
                     <input type="date" class="form-control" id="data_consulta" name="data_consulta" value="{{$consulta->data_consulta}}">
                 </div>
+            </div>
+
+            <div class="form-group row mt-4">
+
             </div>
 
             <div class="mt-4 text-left">

@@ -20,9 +20,7 @@
                             <th>Paciente</th>
                             <th>Dia da Semana</th>
                             <th>Data da Consulta</th>
-                            <th>Profissional</th>
-                            <th>Paciente</th>
-                            <th>Falta Justificada</th>
+                            <th>Frequência</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -41,22 +39,19 @@
                             <td style="vertical-align:middle">{{$consulta->dia_semana}}</td>
                             <td style="vertical-align:middle">{{$consulta->data_consulta}}</td>
                             <td style="vertical-align:middle">
-                                <div class="form-check form-switch ml-3">
-                                    <input class="form-check-input" type="checkbox" id="prof_frequencia_{{$consulta->id}}" name="prof_frequencia[]" value="{{$consulta->id}}" {{$consulta->prof_frequencia ? 'checked' : ''}}>
-                                    <label class="form-check-label" for="prof_frequencia_{{$consulta->id}}">Presente</label>
-                                </div>
-                            </td>
-                            <td style="vertical-align:middle">
-                                <div class="form-check form-switch ml-3">
-                                    <input class="form-check-input" type="checkbox" id="paciente_frequencia_{{$consulta->id}}" name="paciente_frequencia[]" value="{{$consulta->id}}" {{$consulta->paciente_frequencia ? 'checked' : ''}}>
-                                    <label class="form-check-label" for="paciente_frequencia_{{$consulta->id}}">Presente</label>
-                                </div>
-                            </td>
-                            <td style="vertical-align:middle">
-                                <div class="form-check form-switch ml-3">
-                                    <input class="form-check-input" type="checkbox" id="falta_justificada_{{$consulta->id}}" name="falta_justificada[]" value="{{$consulta->id}}" {{$consulta->falta_justificada ? 'checked' : ''}}>
-                                    <label class="form-check-label" for="falta_justificada_{{$consulta->id}}">Justificada</label>
-                                </div>
+                                <form action="{{ route('consulta.atualizar-frequencia', ['consulta' => $consulta->id]) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="d-flex">
+                                        <select class="form-control" name="frequencia" required>
+                                            <option value="Agendado" {{ $consulta->frequencia == 'Agendado' ? 'selected' : '' }}>Agendado</option>
+                                            <option value="Presente" {{ $consulta->frequencia == 'Presente' ? 'selected' : '' }}>Presente</option>
+                                            <option value="Falta" {{ $consulta->frequencia == 'Falta' ? 'selected' : '' }}>Falta</option>
+                                            <option value="Falta Justificada" {{ $consulta->frequencia == 'Falta Justificada' ? 'selected' : '' }}>Falta Justificada</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary ml-2">Atualizar</button>
+                                    </div>
+                                </form>
                             </td>
                             <td>
                                 <div class="d-flex">
@@ -76,4 +71,4 @@
 </div>
 @endsection
 
-<!-- @vite(['resources/js/registraFaltas.js']) -->
+@vite(['resources/js/frequencia.js'])

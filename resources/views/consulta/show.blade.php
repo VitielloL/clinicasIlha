@@ -19,49 +19,30 @@
                     <label class="form-label" for="horario">Horário:</label>
                     <input type="text" class="form-control" id="horario" value="{{$d->horario}}" disabled>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label class="form-label" for="profissional">Profissional:</label>
                     <input type="text" class="form-control" id="profissional" value="{{$d->profissional->nome}}" disabled>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label class="form-label" for="cliente">Cliente:</label>
                     <input type="text" class="form-control" id="cliente" value="{{$d->cliente->nome}}" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="cid">CID:</label>
+                    <input type="text" class="form-control" id="cid" value="{{$d->cid}}" disabled>
                 </div>
             </div>
 
             <div class="form-group row mt-4">                    
                 <div class="col-md-2">
-                    <label class="form-label" for="cid">CID:</label>
-                    <input type="text" class="form-control" id="cid" value="{{$d->cid}}" disabled>
-                </div>
-                <div class="col-md-3">
                     <label class="form-label" for="especialidade">Especialidade:</label>
                     <input type="text" class="form-control" id="especialidade" value="{{$d->especialidade}}" disabled>
                 </div>
-                <div class="col-md-2 ml-3">
-                    <label class="form-label" for="prof_frequencia">Profissional:</label>
-                    <div class="form-check form-switch ml-3">
-                        <input type="checkbox" class="form-check-input" id="prof_frequencia" {{$d->prof_frequencia ? 'checked' : ''}} disabled>
-                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
-                    </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="frequencia">Frequência:</label>
+                    <input type="text" class="form-control" id="frequencia" value="{{$d->frequencia}}" disabled>
                 </div>
-                <div class="col-md-2 ml-3">
-                    <label class="form-label" for="paciente_frequencia">Paciente:</label>
-                    <div class="form-check form-switch ml-3">
-                        <input type="checkbox" class="form-check-input" id="paciente_frequencia" {{$d->paciente_frequencia ? 'checked' : ''}} disabled>
-                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
-                    </div>
-                </div>
-                <div class="col-md-2 ml-3">
-                    <label class="form-label" for="falta_justificada">Falta Justificada: </label>
-                    <div class="form-check form-switch ml-3">
-                        <input type="checkbox" class="form-check-input" id="falta_justificada" {{$d->falta_justificada ? 'checked' : ''}} disabled>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-4">                    
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label class="form-label" for="plano">Plano:</label>
                     <input type="text" class="form-control" id="plano" value="{{$d->plano}}" disabled>
                 </div>
@@ -78,7 +59,6 @@
                     <input type="text" class="form-control" id="data_consulta" value="{{$d->data_consulta}}" disabled>
                 </div>
             </div>
-
             <div class="mt-4 text-left">
                 <a href="{{route('consulta')}}" class="btn btn-secondary">Voltar</a>
             </div>

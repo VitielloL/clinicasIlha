@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profissional/remover/{id}', [ProfissionalController::class, 'destroy'])->name('profissional.remover');
 
     Route::get('/consulta', [ConsultaController::class, 'index'])->name('consulta');
+    Route::put('/consulta/atualizar-frequencia/{consulta}', [ConsultaController::class, 'atualizarFrequencia'])->name('consulta.atualizar-frequencia');
     Route::get('/consulta/novo', [ConsultaController::class, 'create'])->name('consulta.novo');
     Route::post('/consulta/store', [ConsultaController::class, 'store'])->name('consulta.store');
     Route::get('/consulta/{id}', [ConsultaController::class, 'show'])->name('consulta.show');
