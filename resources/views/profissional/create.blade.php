@@ -4,6 +4,16 @@
     <div class="container my-4">
         <h2 style="margin-bottom: 15px; padding-top:15px;"> Novo Profissional </h2>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
         <form action='{{route('profissional.store')}}' method="POST">
             @csrf
 

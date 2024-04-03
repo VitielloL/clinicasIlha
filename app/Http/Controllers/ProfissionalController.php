@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Profissional;
+use Illuminate\Validation\Rule;
 
 class ProfissionalController extends Controller
 {
@@ -31,9 +32,21 @@ class ProfissionalController extends Controller
 
     public function store(Request $request)
     {
+        // Validação dos campos
+        $request->validate([
+            'cpf' => 'required|unique:profissionais,cpf',
+            // Adicione outras regras de validação conforme necessário para os outros campos
+        ], [
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'CPF já cadastrado',
+            // Adicione mensagens de erro para as outras regras de validação conforme necessário
+        ]);
+    
+        // Se a validação passar, prosseguir com o armazenamento dos dados
         $dados = $request->all();
-
         Profissional::create($dados);
+    
+        // Redirecionar de volta à página de profissionais após o cadastro
         return redirect()->route('profissional');
     }
 
@@ -50,7 +63,18 @@ class ProfissionalController extends Controller
     public function update(Request $request, $id)
     {
         $dado = Profissional::find($id);
-
+    
+        // Validação do CPF
+        $request->validate([
+            'cpf' => ['required', Rule::unique('profissionais', 'cpf')->ignore($dado->id)],
+            // Adicione outras regras de validação conforme necessário para os outros campos
+        ], [
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'CPF já cadastrado',
+            // Adicione mensagens de erro para as outras regras de validação conforme necessário
+        ]);
+    
+        // Se a validação passar, atualize os dados do profissional
         $dado->cpf = $request->cpf;
         $dado->nome = $request->nome;
         $dado->especializacao = $request->especializacao;
@@ -63,7 +87,7 @@ class ProfissionalController extends Controller
         $dado->complemento = $request->complemento;
         $dado->cidade = $request->cidade;
         $dado->uf = $request->uf;
-
+    
         $dado->save();
         return redirect()->route('profissional');
     }
@@ -72,7 +96,7 @@ class ProfissionalController extends Controller
     {
         $dado = Profissional::where('id', $id)->get();
         if (!empty($dado)) {
-            DB::delete('DELETE FROM profissional WHERE id = ?', [$id]);
+            DB::delete('DELETE FROM profissionais WHERE id = ?', [$id]);
         }
         return redirect()->route('profissional');
     }   
