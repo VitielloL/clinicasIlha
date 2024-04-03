@@ -40,19 +40,21 @@
                 </div>
                 <div class="col-md-2 ml-3">
                     <label class="form-label" for="prof_frequencia">Profissional:</label>
-                    <div class="form-check ml-2">
+                    <div class="form-check form-switch ml-3">
                         <input type="checkbox" class="form-check-input" id="prof_frequencia" {{$d->prof_frequencia ? 'checked' : ''}} disabled>
+                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
                     </div>
                 </div>
                 <div class="col-md-2 ml-3">
                     <label class="form-label" for="paciente_frequencia">Paciente:</label>
-                    <div class="form-check ml-2">
+                    <div class="form-check form-switch ml-3">
                         <input type="checkbox" class="form-check-input" id="paciente_frequencia" {{$d->paciente_frequencia ? 'checked' : ''}} disabled>
+                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
                     </div>
                 </div>
                 <div class="col-md-2 ml-3">
                     <label class="form-label" for="falta_justificada">Falta Justificada: </label>
-                    <div class="form-check ml-2">
+                    <div class="form-check form-switch ml-3">
                         <input type="checkbox" class="form-check-input" id="falta_justificada" {{$d->falta_justificada ? 'checked' : ''}} disabled>
                     </div>
                 </div>

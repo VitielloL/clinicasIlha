@@ -51,26 +51,26 @@
                     <input type="text" class="form-control" id="especialidade" name="especialidade" value="{{$consulta->especialidade}}">
                 </div>
                 <div class="col-md-2">
-                <label class="form-label">Profissional: </label><br>
-                <div class="form-check form-switch ml-3">
-                    <input class="form-check-input" type="checkbox" id="prof_frequencia" name="prof_frequencia" {{$consulta->prof_frequencia ? 'checked' : ''}}>
-                    <label class="form-check-label" for="prof_frequencia">Presente</label>
+                    <label class="form-label">Profissional: </label><br>
+                    <div class="form-check form-switch ml-3">
+                        <input class="form-check-input" type="checkbox" id="prof_frequencia" name="prof_frequencia" {{$consulta->prof_frequencia ? 'checked' : ''}}>
+                        <label class="form-check-label" for="prof_frequencia">Presente</label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Paciente: </label><br>
-                <div class="form-check form-switch ml-3">
-                    <input class="form-check-input" type="checkbox" id="paciente_frequencia" name="paciente_frequencia" {{$consulta->paciente_frequencia ? 'checked' : ''}}>
-                    <label class="form-check-label" for="paciente_frequencia">Presente</label>
+                <div class="col-md-2">
+                    <label class="form-label">Paciente: </label><br>
+                    <div class="form-check form-switch ml-3">
+                        <input class="form-check-input" type="checkbox" id="paciente_frequencia" name="paciente_frequencia" {{$consulta->paciente_frequencia ? 'checked' : ''}}>
+                        <label class="form-check-label" for="paciente_frequencia">Presente</label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Falta Justificada: </label><br>
-                <div class="form-check form-switch ml-3">
-                    <input class="form-check-input" type="checkbox" id="falta_justificada" name="falta_justificada" {{$consulta->falta_justificada ? 'checked' : ''}}>
-                    <label class="form-check-label" for="falta_justificada"></label>
+                <div class="col-md-2">
+                    <label class="form-label">Falta Justificada: </label><br>
+                    <div class="form-check form-switch ml-3">
+                        <input class="form-check-input" type="checkbox" id="falta_justificada" name="falta_justificada" {{$consulta->falta_justificada ? 'checked' : ''}}>
+                        <label class="form-check-label" for="falta_justificada"></label>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="form-group row mt-4">
