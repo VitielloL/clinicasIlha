@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Validation\Rule;
 
 class ClienteController extends Controller
 {
@@ -62,6 +63,16 @@ class ClienteController extends Controller
     public function update(Request $request, $id)
     {
         $dado = Cliente::find($id);
+    
+        // Validação do CPF
+        $request->validate([
+            'cpf' => ['required', Rule::unique('clientes', 'cpf')->ignore($dado->id)],
+            // Adicione outras regras de validação conforme necessário para os outros campos
+        ], [
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'CPF já cadastrado',
+            // Adicione mensagens de erro para as outras regras de validação conforme necessário
+        ]);
 
         $dado->cpf = $request->cpf;
         $dado->nome = $request->nome;
