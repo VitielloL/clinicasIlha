@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css', 
                 'resources/js/app.js',
                 'resources/js/register.js',
+                'resources/js/selected2.js',
                 'resources/js/jqueryMask-cep-pessoa.js',
             ],
             refresh: true,

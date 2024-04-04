@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="profissional">Profissional: </label>
-                    <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
+                    <select class="profissional custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
                         @foreach ($dados['profissional'] as $profissional)
                             <option value="{{ $profissional->id }}" {{ $consulta->profissional_id == $profissional->id ? 'selected' : '' }}>
                                 {{ $profissional->nome }} - {{ $profissional->cpf }}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="cliente">Paciente: </label>
-                    <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
+                    <select class="cliente custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
                         @foreach ($dados['cliente'] as $cliente)
                             <option value="{{ $cliente->id }}" {{ $consulta->cliente_id == $cliente->id ? 'selected' : '' }}>
                                 {{ $cliente->nome }} - {{ $cliente->cpf }}
@@ -98,4 +98,4 @@
     </div>
 @endsection
 
-@vite(['resources/js/jqueryMask-cep-pessoa.js'])
+@vite(['resources/js/selected2.js'])

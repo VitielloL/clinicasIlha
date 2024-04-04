@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="profissional">Profissional: </label>
-                    <select class="custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
+                    <select class="profissional custom-select custom-select-md mb-3" name="profissional" id="profissional" required>
                         <option value="" selected disabled>Selecione um profissional</option>
                         @foreach ( $dados['profissional'] as $dado )
                           <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="cliente">Paciente: </label>
-                    <select class="custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
+                    <select class="cliente custom-select custom-select-md mb-3" name="cliente" id="cliente" required>
                         <option value="" selected disabled>Selecione um paciente</option>
                         @foreach ( $dados['cliente'] as $dado )
                           <option value="{{$dado->id}}">{{$dado->nome}} - {{$dado->cpf}}</option>
@@ -92,3 +92,5 @@
         </form>
     </div>
 @endsection
+
+@vite(['resources/js/selected2.js'])
