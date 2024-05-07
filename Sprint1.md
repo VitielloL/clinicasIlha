@@ -1,4 +1,4 @@
-** SPRINT 1 **
+**SPRINT 1**
 
 OK - colocar regra na tela de home para pegar apenas os do dia atual
 OK - resolver bug (por verificação) se email ja existe (está como unique) ao realizar o login
