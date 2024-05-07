@@ -1,4 +1,5 @@
 ** SPRINT 1 **
+
 OK - colocar regra na tela de home para pegar apenas os do dia atual
 OK - resolver bug (por verificação) se email ja existe (está como unique) ao realizar o login
 OK - add verificação de cpf para que nao de problema no cpf unique create cliente
